@@ -1,3 +1,4 @@
+**Funcionalidad aplicación**
 
 La aplicación consiste en la creación de un analizador de texto que puede analizar el texto ingresado por el usuario. Este programa proporcionará las siguientes características:
 
@@ -14,3 +15,8 @@ La aplicación consiste en la creación de un analizador de texto que puede anal
   5. Palabra más larga: El programa identificará y mostrará la palabra más larga presente en el texto.
 
 Para implementar estas funcionalidades, se utilizará un solo bucle para encapsular el proceso de análisis del texto, y tendra validaciones de todo tipo, lo que garantizará un diseño eficiente y fácil de mantener del programa.
+
+**Diagrama de clases**
+
+![Analizador de Texto](https://github.com/JDominguezCuero/AnalizadorTexto/assets/161736837/f910fa1d-41d3-4ea8-aabd-78866e365481)
+
