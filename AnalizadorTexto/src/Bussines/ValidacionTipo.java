@@ -42,7 +42,7 @@ public class ValidacionTipo {
     }
     public static boolean caracteresEspecialesSeguidos(String texto) {
         // Patrón para verificar si el texto contiene más de un carácter especial seguido
-        Pattern patron = Pattern.compile("[^a-zA-Z0-9\\s]{2,}");
+        Pattern patron = Pattern.compile("[^a-zA-Z0-9,.\\s]{2,}");
         Matcher matcher = patron.matcher(texto);
         return matcher.find();
     }
