@@ -48,9 +48,8 @@ public class ValidacionTipo {
     }
     public static boolean caracteresEspecialesInicioFin(String texto) {
         // Patrón para verificar si el texto contiene caracteres especiales al inicio o al final
-        Pattern patron = Pattern.compile("^[^a-zA-Z0-9]|[^a-zA-Z0-9]$");
-        Matcher matcher = patron.matcher(texto);
-        return matcher.find();
+        String regex = "^[#$%&].*|.*[#$%&]$";
+        return texto.matches(regex);
     }
 
 

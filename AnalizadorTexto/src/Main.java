@@ -13,28 +13,32 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ITextAnalyzerInterface analyzer = new TextAnalyzer();
         String texto;
-        int opcion;
+        int opcion = 0;
 
         do {
-            System.out.println("--------------------------");
-            System.out.println("   1. Ingresar texto ");
-            System.out.println("   2. Salir ");
-            System.out.println("--------------------------");
-            opcion = Integer.parseInt(valT.pedirEntradaNumeros(scanner));
+            try {
+                System.out.println("--------------------------");
+                System.out.println("   1. Ingresar texto ");
+                System.out.println("   2. Salir ");
+                System.out.println("--------------------------");
+                opcion = Integer.parseInt(valT.pedirEntradaNumeros(scanner));
 
-            switch (opcion) {
-                case 1:
-                    System.out.println();
-                    texto = valT.pedirEntradaTexto(scanner);
-                    analyzer.analyze(texto);
-                    break;
-                case 2:
-                    System.out.println("Fin del programa...");
-                    break;
-                default:
-                    System.out.println();
-                    System.out.println(AVISO_RED + "Opción inválida. Inténtalo de nuevo." + resetColor);
-                    break;
+                switch (opcion) {
+                    case 1:
+                        System.out.println();
+                        texto = valT.pedirEntradaTexto(scanner);
+                        analyzer.analyze(texto);
+                        break;
+                    case 2:
+                        System.out.println("Fin del programa...");
+                        break;
+                    default:
+                        System.out.println();
+                        System.out.println(AVISO_RED + "Opción inválida. Inténtalo de nuevo." + resetColor);
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println(AVISO_RED + "El formato ingresado no es válido." + resetColor);
             }
         } while (opcion != 2);
     }

@@ -6,7 +6,7 @@ public class TextAnalyzer implements ITextAnalyzerInterface {
     @Override
     public void analyze(String texto) {
         int totalPalabras = contarPalabras(texto);
-        String longitudMedia = calcularLongitudMedia(texto, totalPalabras);
+        int longitudMedia = calcularLongitudMedia(texto, totalPalabras);
         int duracionPalabras = contarPalabrasConGuion(texto);
         int oraciones = contarOraciones(texto);
         String palabraMasLarga = encontrarPalabraMasLarga(texto);
@@ -26,10 +26,10 @@ public class TextAnalyzer implements ITextAnalyzerInterface {
         return palabras.length;
     }
 
-    private static String calcularLongitudMedia(String texto, int totalPalabras) {
+    private static int calcularLongitudMedia(String texto, int totalPalabras) {
         //Elimina todos los espacios en blanco y cuenta el resultado final
-        int longitudTotal = texto.replaceAll("[^a-zA-Z]", "").length();
-        return String.format("%.1f", (double) longitudTotal / totalPalabras);
+        int longitudTotal = texto.replaceAll("[^a-zA-Z0-9#$%&]", "").length();
+        return (int) longitudTotal / totalPalabras;
     }
 
     private static int contarPalabrasConGuion(String texto) {
